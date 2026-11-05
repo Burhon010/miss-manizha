@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Miss Manizha — английский и французский онлайн</title>
+<meta name="description" content="Miss Manizha — преподаватель английского и французского языков с опытом 7+ лет. Групповые и индивидуальные онлайн-уроки с нуля.">
+<meta name="theme-color" content="#0b130f">
+<meta property="og:title" content="Miss Manizha — English & French online">
+<meta property="og:description" content="Групповые и индивидуальные онлайн-уроки английского и французского с нуля. 7+ лет опыта.">
+<meta property="og:image" content="images/manizha.png">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+  <div class="preloader__inner">
+    <span class="preloader__mark">M</span>
+    <span class="preloader__name">Miss Manizha</span>
+    <span class="preloader__bar"><i></i></span>
+  </div>
+</div>
+
+<canvas id="dust" class="dust" aria-hidden="true"></canvas>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<header class="header" id="header">
+  <div class="container header__row">
+    <a href="#top" class="logo" aria-label="Miss Manizha">
+      <span class="logo__mark">M</span>
+      <span class="logo__text">Miss <b>Manizha</b></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about" data-i18n="nav.about">Обо мне</a>
+      <a href="#courses" data-i18n="nav.courses">Курсы</a>
+      <a href="#why" data-i18n="nav.why">Преимущества</a>
+      <a href="#steps" data-i18n="nav.steps">Как начать</a>
+      <a href="#faq" data-i18n="nav.faq">Вопросы</a>
+      <a href="#contact" class="nav__cta-mobile btn btn--gold" data-dm data-i18n="cta.enroll">Записаться</a>
+    </nav>
+    <div class="header__right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ru" class="is-active">RU</button>
+        <button type="button" data-lang="en">EN</button>
+        <span class="lang__pill"></span>
+      </div>
+      <a href="#" class="btn btn--gold btn--sm header__cta magnetic" data-dm data-i18n="cta.enroll">Записаться</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <svg class="landmark landmark--eiffel" data-speed="0.12" viewBox="0 0 200 400" aria-hidden="true">
+      <path class="draw" d="M100 0V30M93 30H107M95 30L96 40H104L105 30M96 40L84 150M104 40L116 150M80 150H120M78 158H122M84 158L68 240M116 158L132 240M58 240H142M60 250H140M66 250Q48 330 20 400M134 250Q152 330 180 400M72 250Q64 330 50 400M128 250Q136 330 150 400M50 400Q100 300 150 400M95 52L106 66L93 80L108 94L91 108L110 122L89 136L112 150M85 160L116 178L80 196L121 214L74 232L128 240M70 262L130 262M66 290L134 290M60 320L140 320M60 262L80 290L60 320M140 262L120 290L140 320"/>
+    </svg>
+    <svg class="landmark landmark--ben" data-speed="0.2" viewBox="0 0 120 400" aria-hidden="true">
+      <path class="draw" d="M60 0L50 58H70Z M46 58H74V100H46Z M52 66V94M60 66V94M68 66V94 M38 100H82V162H38Z M60 116A16 16 0 1 0 60.01 116 M60 132L60 122M60 132L68 136 M42 162H78V400H42Z M51 162V400M60 162V400M69 162V400M42 195H78M42 230H78M42 265H78M42 300H78M42 335H78M42 370H78"/>
+    </svg>
+
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow reveal" data-i18n="hero.eyebrow">Онлайн-уроки английского и французского</p>
+        <h1 class="hero__title" data-split data-i18n="hero.title">Заговорите на <em>английском</em> и <em>французском</em> уверенно</h1>
+        <p class="hero__lead reveal" style="--d:.5s" data-i18n="hero.lead">Групповые и индивидуальные занятия с преподавателем с опытом более 7 лет. Начинаем с нуля — спокойно, понятно и с живой разговорной практикой.</p>
+        <div class="hero__actions reveal" style="--d:.65s">
+          <a href="#" class="btn btn--gold magnetic" data-dm>
+            <svg viewBox="0 0 24 24" class="ico"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            <span data-i18n="cta.write">Написать в Direct</span>
+          </a>
+          <a href="#courses" class="btn btn--ghost magnetic" data-i18n="cta.courses">Смотреть курсы</a>
+        </div>
+        <ul class="hero__meta reveal" style="--d:.8s">
+          <li><b>7+</b><span data-i18n="hero.m1">лет опыта</span></li>
+          <li><b>3×</b><span data-i18n="hero.m2">в неделю по 1 часу</span></li>
+          <li><b>0</b><span data-i18n="hero.m3">старт с нуля</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual reveal" style="--d:.3s">
+        <div class="portrait" id="portrait">
+          <div class="portrait__ring"></div>
+          <div class="portrait__frame">
+            <img src="images/manizha.png" alt="Miss Manizha" width="460" height="664">
+          </div>
+          <div class="float-card float-card--a">
+            <span class="float-card__flags"><img src="images/flags/gb.svg" alt=""><img src="images/flags/fr.svg" alt=""></span>
+            <span><b>English C2 · Français C1</b><small data-i18n="hero.badge1">уровень преподавателя</small></span>
+          </div>
+          <div class="float-card float-card--b">
+            <span class="float-card__num">7+</span>
+            <span><b data-i18n="hero.badge2t">лет</b><small data-i18n="hero.badge2">преподавания</small></span>
+          </div>
+          <div class="float-card float-card--c">
+            <span class="dot-live"></span>
+            <span data-i18n="hero.badge3">Набор в группы открыт</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll"><span></span></a>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Hello</span><i>✦</i><span>Bonjour</span><i>✦</i><span>Привет</span><i>✦</i><span>Merhaba</span><i>✦</i><span>Салом</span><i>✦</i><span>Thank you</span><i>✦</i><span>Merci</span><i>✦</i><span>Let's talk</span><i>✦</i><span>Parlons</span><i>✦</i>
+      <span>Hello</span><i>✦</i><span>Bonjour</span><i>✦</i><span>Привет</span><i>✦</i><span>Merhaba</span><i>✦</i><span>Салом</span><i>✦</i><span>Thank you</span><i>✦</i><span>Merci</span><i>✦</i><span>Let's talk</span><i>✦</i><span>Parlons</span><i>✦</i>
+    </div>
+  </div>
+
+  <section class="section about" id="about">
+    <div class="container about__grid">
+      <div class="about__media reveal">
+        <div class="about__photo">
+          <img src="images/manizha.png" alt="Miss Manizha" loading="lazy">
+        </div>
+        <div class="about__stamp">
+          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#circ">ENGLISH · FRANÇAIS · ONLINE · MISS MANIZHA · </textPath></text></svg>
+          <span>M</span>
+        </div>
+      </div>
+      <div class="about__content">
+        <p class="eyebrow reveal" data-i18n="about.eyebrow">Обо мне</p>
+        <h2 class="h2 reveal" data-i18n="about.title">Здравствуйте! Я — <em>Манижа</em></h2>
+        <p class="reveal" data-i18n="about.p1">Преподаватель английского и французского языков с опытом более 7 лет. Я помогаю ученикам начать с нуля и дойти до свободного, уверенного общения.</p>
+        <p class="reveal" data-i18n="about.p2">Я сама говорю на пяти языках — и знаю путь изучения языка изнутри. Поэтому объясняю просто, понятно и так, чтобы знания оставались надолго, а не забывались после урока.</p>
+        <div class="langs reveal">
+          <p class="langs__title" data-i18n="about.langs">Языки, на которых я говорю</p>
+          <ul class="langs__list">
+            <li><img src="images/flags/gb.svg" alt=""><span>English</span><b class="lvl lvl--top">C2</b></li>
+            <li><img src="images/flags/fr.svg" alt=""><span>Français</span><b class="lvl lvl--top">C1</b></li>
+            <li><img src="images/flags/ru.svg" alt=""><span>Русский</span><b class="lvl">C1</b></li>
+            <li><img src="images/flags/tr.svg" alt=""><span>Türkçe</span><b class="lvl">B1</b></li>
+            <li><img src="images/flags/tj.svg" alt=""><span>Тоҷикӣ</span><b class="lvl lvl--native" data-i18n="about.native">Родной</b></li>
+          </ul>
+        </div>
+        <div class="stats">
+          <div class="stat reveal"><b data-count="7" data-suffix="+">0</b><span data-i18n="stats.s1">лет преподавания</span></div>
+          <div class="stat reveal" style="--d:.1s"><b data-count="5">0</b><span data-i18n="stats.s2">языков владею</span></div>
+          <div class="stat reveal" style="--d:.2s"><b>C2</b><span data-i18n="stats.s3">уровень английского</span></div>
+          <div class="stat reveal" style="--d:.3s"><b data-count="60">0</b><span data-i18n="stats.s4">минут — один урок</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section courses" id="courses">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow reveal" data-i18n="courses.eyebrow">Курсы</p>
+        <h2 class="h2 reveal" data-i18n="courses.title">Выберите свой <em>формат</em> обучения</h2>
+        <p class="section__sub reveal" data-i18n="courses.sub">Английский и французский — в группе или один на один. Все занятия проходят онлайн, так что учиться можно из дома, из любого города и любой страны.</p>
+      </div>
+
+      <div class="cards">
+        <article class="course reveal tilt">
+          <div class="course__top">
+            <span class="tag tag--live"><span class="dot-live"></span><span data-i18n="courses.c1.tag">Набор открыт</span></span>
+            <span class="course__flags"><img src="images/flags/gb.svg" alt=""><img src="images/flags/fr.svg" alt=""></span>
+          </div>
+          <h3 class="course__title" data-i18n="courses.c1.title">Групповые занятия с нуля</h3>
+          <p class="course__text" data-i18n="courses.c1.text">Идеальный старт для тех, кто никогда не учил язык. Учимся вместе, поддерживаем друг друга и много говорим.</p>
+          <ul class="checks">
+            <li data-i18n="courses.c1.f1">Старт с нуля — с алфавита и произношения</li>
+            <li data-i18n="courses.c1.f2">3 занятия в неделю по 1 часу</li>
+            <li data-i18n="courses.c1.f3">Живое общение и разговорная практика</li>
+            <li data-i18n="courses.c1.f4">Домашние задания и обратная связь</li>
+          </ul>
+          <div class="course__schedule">
+            <svg viewBox="0 0 24 24" class="ico"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg>
+            <span><b data-i18n="courses.times">3 раза в неделю</b><small data-i18n="courses.hour">по 1 часу</small></span>
+          </div>
+          <a href="#" class="btn btn--gold btn--block" data-dm data-i18n="courses.c1.cta">Записаться в группу</a>
+        </article>
+
+        <article class="course course--featured reveal tilt" style="--d:.12s">
+          <div class="course__top">
+            <span class="tag" data-i18n="courses.c2.tag">Онлайн · 1 на 1</span>
+            <span class="course__flags"><img src="images/flags/gb.svg" alt=""><img src="images/flags/fr.svg" alt=""></span>
+          </div>
+          <h3 class="course__title" data-i18n="courses.c2.title">Индивидуальные уроки</h3>
+          <p class="course__text" data-i18n="courses.c2.text">Программа строится под вас: ваши цели, уровень и темп. Всё внимание преподавателя — только вам.</p>
+          <ul class="checks">
+            <li data-i18n="courses.c2.f1">Персональная программа под ваши цели</li>
+            <li data-i18n="courses.c2.f2">Любой уровень — от нуля до продвинутого</li>
+            <li data-i18n="courses.c2.f3">Учёба, работа, переезд или путешествия</li>
+            <li data-i18n="courses.c2.f4">Максимум практики и разговора</li>
+          </ul>
+          <div class="course__schedule">
+            <svg viewBox="0 0 24 24" class="ico"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg>
+            <span><b data-i18n="courses.times">3 раза в неделю</b><small data-i18n="courses.hour">по 1 часу</small></span>
+          </div>
+          <a href="#" class="btn btn--gold btn--block" data-dm data-i18n="courses.c2.cta">Записаться на урок</a>
+        </article>
+      </div>
+      <p class="courses__note reveal" data-i18n="courses.note">Стоимость и расписание ближайших групп — напишите в Direct, отвечу лично.</p>
+    </div>
+  </section>
+
+  <section class="section why" id="why">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow reveal" data-i18n="why.eyebrow">Почему со мной</p>
+        <h2 class="h2 reveal" data-i18n="why.title">Учить язык <em>легко</em>, когда рядом правильный преподаватель</h2>
+      </div>
+      <div class="features">
+        <div class="feature reveal"><span class="feature__ico"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/></svg></span><h3 data-i18n="why.f1t">C2 и C1 — высший уровень</h3><p data-i18n="why.f1">Английский на уровне C2 и французский на уровне C1, плюс 7+ лет преподавания. Вы учитесь у профессионала.</p></div>
+        <div class="feature reveal" style="--d:.08s"><span class="feature__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span><h3 data-i18n="why.f2t">Говорю на 5 языках</h3><p data-i18n="why.f2">Могу объяснить сложную тему на русском, таджикском или турецком — так, чтобы точно было понятно.</p></div>
+        <div class="feature reveal" style="--d:.16s"><span class="feature__ico"><svg viewBox="0 0 24 24"><path d="M3 20h18M6 16V10M11 16V6M16 16v-4M21 16V4"/></svg></span><h3 data-i18n="why.f3t">С нуля до уверенной речи</h3><p data-i18n="why.f3">Пошаговая система: от первых слов к свободным диалогам. Вы видите свой прогресс каждую неделю.</p></div>
+        <div class="feature reveal"><span class="feature__ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><h3 data-i18n="why.f4t">Онлайн, где удобно</h3><p data-i18n="why.f4">Нужен только телефон или ноутбук с интернетом. Без дороги и пробок — учитесь из дома.</p></div>
+        <div class="feature reveal" style="--d:.08s"><span class="feature__ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><h3 data-i18n="why.f5t">Внимание к каждому</h3><p data-i18n="why.f5">Учитываю ваш характер, темп и цели. Никто не остаётся «за бортом» — даже в группе.</p></div>
+        <div class="feature reveal" style="--d:.16s"><span class="feature__ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><h3 data-i18n="why.f6t">Практика с первого урока</h3><p data-i18n="why.f6">Меньше скучной теории — больше живого общения. Вы начинаете говорить уже на первых занятиях.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section audience">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow reveal" data-i18n="aud.eyebrow">Для кого</p>
+        <h2 class="h2 reveal" data-i18n="aud.title">Язык, который <em>открывает двери</em></h2>
+      </div>
+      <div class="aud">
+        <div class="aud__item reveal"><span>01</span><h3 data-i18n="aud.a1t">Школьникам</h3><p data-i18n="aud.a1">Подтянуть оценки, подготовиться к экзаменам и полюбить язык.</p></div>
+        <div class="aud__item reveal" style="--d:.08s"><span>02</span><h3 data-i18n="aud.a2t">Студентам</h3><p data-i18n="aud.a2">Учёба и стажировки за рубежом, гранты и международные программы.</p></div>
+        <div class="aud__item reveal" style="--d:.16s"><span>03</span><h3 data-i18n="aud.a3t">Взрослым</h3><p data-i18n="aud.a3">Карьера, работа с иностранными коллегами и новые возможности.</p></div>
+        <div class="aud__item reveal" style="--d:.24s"><span>04</span><h3 data-i18n="aud.a4t">Путешественникам</h3><p data-i18n="aud.a4">Свободно общаться в Лондоне, Париже и в любой точке мира.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="container">
+      <blockquote class="reveal">
+        <span class="quote__mark">“</span>
+        <p data-i18n="quote.text">Границы моего языка означают границы моего мира.</p>
+        <cite data-i18n="quote.author">— Людвиг Витгенштейн</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section steps" id="steps">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow reveal" data-i18n="steps.eyebrow">Как начать</p>
+        <h2 class="h2 reveal" data-i18n="steps.title">Четыре шага до <em>первого урока</em></h2>
+      </div>
+      <ol class="timeline" id="timeline">
+        <li class="reveal"><span class="timeline__n">1</span><h3 data-i18n="steps.s1t">Напишите в Direct</h3><p data-i18n="steps.s1">Одно сообщение в Instagram — и я отвечу лично.</p></li>
+        <li class="reveal" style="--d:.1s"><span class="timeline__n">2</span><h3 data-i18n="steps.s2t">Обсудим цели</h3><p data-i18n="steps.s2">Узнаю ваш уровень, задачи и удобное время.</p></li>
+        <li class="reveal" style="--d:.2s"><span class="timeline__n">3</span><h3 data-i18n="steps.s3t">Выберем формат</h3><p data-i18n="steps.s3">Группа или индивидуально, английский или французский.</p></li>
+        <li class="reveal" style="--d:.3s"><span class="timeline__n">4</span><h3 data-i18n="steps.s4t">Начинаем!</h3><p data-i18n="steps.s4">Первый урок — и ваш новый язык уже в пути.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container faq__grid">
+      <div class="section__head section__head--left">
+        <p class="eyebrow reveal" data-i18n="faq.eyebrow">Вопросы</p>
+        <h2 class="h2 reveal" data-i18n="faq.title">Частые <em>вопросы</em></h2>
+        <p class="section__sub reveal" data-i18n="faq.sub">Не нашли ответ? Просто напишите мне в Instagram — отвечу на всё.</p>
+      </div>
+      <div class="acc">
+        <div class="acc__item reveal"><button class="acc__q" type="button"><span data-i18n="faq.q1">Я никогда не учил язык. Мне подойдёт?</span><i></i></button><div class="acc__a"><div><p data-i18n="faq.a1">Конечно! Группы набираются именно с нуля: начинаем с алфавита, произношения и самых нужных фраз.</p></div></div></div>
+        <div class="acc__item reveal"><button class="acc__q" type="button"><span data-i18n="faq.q2">Как проходят онлайн-уроки?</span><i></i></button><div class="acc__a"><div><p data-i18n="faq.a2">По видеосвязи в реальном времени. Нужен телефон или компьютер и стабильный интернет — всё остальное я подготовлю.</p></div></div></div>
+        <div class="acc__item reveal"><button class="acc__q" type="button"><span data-i18n="faq.q3">Как часто и сколько длятся занятия?</span><i></i></button><div class="acc__a"><div><p data-i18n="faq.a3">3 раза в неделю по 1 часу. Такой ритм даёт стабильный прогресс и не перегружает.</p></div></div></div>
+        <div class="acc__item reveal"><button class="acc__q" type="button"><span data-i18n="faq.q4">Группа или индивидуально — что выбрать?</span><i></i></button><div class="acc__a"><div><p data-i18n="faq.a4">Группа — это общение, мотивация и доступная цена. Индивидуально — максимум внимания и программа под ваши цели. Подскажу, что лучше именно вам.</p></div></div></div>
+        <div class="acc__item reveal"><button class="acc__q" type="button"><span data-i18n="faq.q5">Сколько стоит обучение?</span><i></i></button><div class="acc__a"><div><p data-i18n="faq.a5">Стоимость зависит от формата. Напишите в Direct — расскажу о ценах и ближайших группах.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="cta__box reveal">
+        <div class="cta__glow"></div>
+        <p class="eyebrow" data-i18n="final.eyebrow">Места в группах ограничены</p>
+        <h2 class="h2" data-i18n="final.title">Ваш новый язык начинается <em>с одного сообщения</em></h2>
+        <p class="section__sub" data-i18n="final.sub">Напишите мне в Instagram прямо сейчас — подберём формат и начнём уже на этой неделе.</p>
+        <div class="cta__actions">
+          <a href="#" class="btn btn--gold btn--lg magnetic" data-dm>
+            <svg viewBox="0 0 24 24" class="ico"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            <span data-i18n="cta.write">Написать в Direct</span>
+          </a>
+          <a href="https://www.instagram.com/_miss_manizha/" target="_blank" rel="noopener" class="ig-link">
+            <svg viewBox="0 0 24 24" class="ico"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+            @_miss_manizha
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__row">
+    <a href="#top" class="logo"><span class="logo__mark">M</span><span class="logo__text">Miss <b>Manizha</b></span></a>
+    <p data-i18n="footer.text">Английский и французский онлайн · с нуля до уверенной речи</p>
+    <p class="footer__copy">© <span id="year"></span> Miss Manizha</p>
+  </div>
+</footer>
+
+<a href="#" class="fab" data-dm aria-label="Instagram Direct">
+  <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>
