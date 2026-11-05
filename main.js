@@ -249,14 +249,22 @@
 
   /* mobile menu */
   const burger = $("#burger"), nav = $("#nav");
-  const closeMenu = () => { nav.classList.remove("is-open"); burger.classList.remove("is-open"); document.body.style.overflow = ""; };
-  burger.addEventListener("click", () => {
-    const open = !nav.classList.contains("is-open");
+  burger.setAttribute("aria-expanded", "false");
+  burger.setAttribute("aria-controls", "nav");
+  const setMenu = open => {
     nav.classList.toggle("is-open", open);
     burger.classList.toggle("is-open", open);
-    document.body.style.overflow = open ? "hidden" : "";
-  });
+    header.classList.toggle("menu-open", open);
+    if (open) header.classList.remove("is-hidden");
+    document.documentElement.classList.toggle("no-scroll", open);
+    burger.setAttribute("aria-expanded", String(open));
+  };
+  const closeMenu = () => setMenu(false);
+  burger.addEventListener("click", e => { e.stopPropagation(); setMenu(!nav.classList.contains("is-open")); });
   $$("a", nav).forEach(a => a.addEventListener("click", closeMenu));
+  nav.addEventListener("click", e => { if (e.target === nav) closeMenu(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeMenu(); });
+  window.matchMedia("(min-width: 901px)").addEventListener("change", e => { if (e.matches) closeMenu(); });
   onScroll();
 
   /* accordion */
