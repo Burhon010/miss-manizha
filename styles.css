@@ -116,6 +116,12 @@ main,.footer,.header{position:relative;z-index:2}
 .hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,70px);align-items:center;position:relative;z-index:2}
 .hero__title{font-family:var(--serif);font-weight:500;font-size:clamp(44px,6.6vw,90px);line-height:1.02;letter-spacing:-.015em;margin:0 0 26px}
 .hero__title em{font-weight:500}
+.hero__langs{list-style:none;margin:-6px 0 26px;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.hero__langs li{display:flex;align-items:center;gap:9px;padding:7px 15px 7px 8px;border:1px solid var(--line);border-radius:999px;background:rgba(201,164,106,.05);font-size:14px;font-weight:500;transition:transform .4s var(--ease),border-color .3s,background .3s}
+.hero__langs li:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(201,164,106,.1)}
+.hero__langs img{width:24px;height:24px;border-radius:50%;object-fit:cover}
+@media (max-width:900px){.hero__langs{justify-content:center}}
+@media (max-width:560px){.hero__langs{gap:8px}.hero__langs li{font-size:13px;padding:6px 12px 6px 6px}.hero__langs img{width:20px;height:20px}}
 .hero__lead{font-size:clamp(16px,1.4vw,18.5px);color:var(--muted);max-width:540px;margin:0 0 36px}
 .hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:46px}
 .hero__meta{list-style:none;padding:28px 0 0;margin:0;display:flex;gap:clamp(22px,4vw,48px);border-top:1px solid var(--line-2);max-width:540px}
