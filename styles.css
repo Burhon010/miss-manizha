@@ -392,6 +392,20 @@ main,.footer,.header{position:relative;z-index:2}
   .acc__a p{padding:0 18px 18px}
   .footer__row{flex-direction:column;text-align:center}
 }
+/* lightweight mode for phones / touch */
+.lite .dust,.lite .cursor-glow{display:none}
+.lite .reveal{filter:none;transform:translateY(24px);transition:opacity .7s var(--ease) var(--d,0s),transform .7s var(--ease) var(--d,0s)}
+.lite .reveal.in{transform:none}
+.lite .header.is-scrolled{background:rgba(11,19,15,.96);backdrop-filter:none;-webkit-backdrop-filter:none}
+.lite .nav{backdrop-filter:none;-webkit-backdrop-filter:none}
+.lite .float-card{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(15,26,21,.94)}
+.lite .portrait__ring::before{animation:none;background:linear-gradient(180deg,var(--gold-2),transparent 60%)}
+.lite .portrait__frame img{animation:none;transform:scale(1.08)}
+.lite .marquee{-webkit-mask:none;mask:none}
+.lite .marquee__track{will-change:transform}
+.lite .cta__glow{animation:none}
+.lite .fab::after{animation:none;opacity:.5}
+.lite .about__stamp svg{will-change:transform}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none;filter:none}

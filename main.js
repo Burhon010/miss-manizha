@@ -2,6 +2,8 @@
   const DM_URL = "https://ig.me/m/_miss_manizha";
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const lite = !finePointer || window.matchMedia("(max-width: 900px)").matches;
+  if (lite) document.documentElement.classList.add("lite");
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
@@ -238,13 +240,17 @@
     header.classList.toggle("is-scrolled", y > 30);
     header.classList.toggle("is-hidden", y > 500 && y > lastY && !nav.classList.contains("is-open"));
     fab.classList.toggle("is-visible", y > window.innerHeight * .8);
-    if (!reduce) landmarks.forEach(l => { l.style.transform = `translate3d(0,${y * l.dataset.speed}px,0)`; });
-    let id = "";
-    sections.forEach(s => { if (s.getBoundingClientRect().top < window.innerHeight * .4) id = s.id; });
-    navLinks.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + id));
+    if (!reduce && !lite && y < window.innerHeight * 1.2) landmarks.forEach(l => { l.style.transform = `translate3d(0,${y * l.dataset.speed}px,0)`; });
     lastY = y;
     ticking = false;
   };
+  const navIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id));
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  sections.forEach(s => navIO.observe(s));
   window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
 
   /* mobile menu */
@@ -326,7 +332,7 @@
 
   /* gold dust */
   const cv = $("#dust"), ctx = cv.getContext("2d");
-  if (!reduce && ctx) {
+  if (!reduce && !lite && ctx) {
     let w, h, dpr, parts = [];
     const resize = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
